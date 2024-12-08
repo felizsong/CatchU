@@ -1,0 +1,24 @@
+.scroll-container {
+  flex-direction: column;
+  margin-top: 3em;
+  display: flex;
+  align-items: center;
+}
+
+.fade-in {
+  width: 100%;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in img {
+  width: 100%;
+  height: auto;
+  display: block; /* 이미지 간 공백 제거 */
+}

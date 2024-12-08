@@ -1,0 +1,234 @@
+.custom-calendar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    justify-items: center;
+}
+
+.calendar-header {
+    font-size: 2vh;
+    font-family: 'Paperlogy4', sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.calendar-day {
+    cursor: pointer;
+    font-family: 'Paperlogy4', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.calendar-day:hover {
+    background-color: #f0f0f0;
+}
+
+.day-label {
+    text-align: center;
+    font-size: 1.8vh;
+    display: block;
+    margin-bottom: 2vh;
+}
+
+.sunday {
+    color: rgb(210, 76, 76);
+}
+
+.saturday {
+    color: rgb(49, 44, 194);
+}
+
+.day-number {
+    font-size: 1.8vh;
+    display: inline-block;
+    width: 3.7vh;
+    height: 3.7vh;
+    line-height: 3.7vh;
+    border-radius: 50%;
+    font-family: 'Paperlogy6', sans-serif;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.today .day-number {
+    border: 1px solid rgb(102, 110, 255);
+}
+
+.selected .day-number {
+    background-color: rgb(102, 110, 255);
+    color: white;
+}
+
+.expand-button {
+    color: rgb(160, 160, 160);
+    background: none;
+    border: none;
+    font-size: 1.5vh;
+    font-family: 'Paperlogy4', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.expand-button:hover {
+    color: rgb(102, 110, 255);
+    transform: scale(1.05);
+}
+
+.expand-button:active {
+    color: rgb(49, 44, 194);
+    transform: scale(0.95);
+}
+
+
+.memo-section {
+    margin-top: 2vh;
+    border-top: 1px solid rgb(227, 227, 227);
+    height: 100%;
+    overflow-y: auto;
+}
+
+.memo-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    padding: 1.2vh;
+}
+
+.memo-item {
+    display: flex;
+    align-items: center;
+    margin: 1.2vh 0;
+    font-size: 1.7vh;
+    font-family: 'Paperlogy4', sans-serif;
+}
+
+.dot {
+    width: 1vh;
+    height: 1vh;
+    background-color: rgb(227, 227, 227);
+    border-radius: 50%;
+    margin-right: 1vh;
+}
+
+.memo-input {
+    margin-top: 1vh;
+    display: flex;
+}
+
+.memo-input input {
+    flex: 1;
+    padding: 1vh;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Paperlogy4', sans-serif;
+    font-size: 70%;
+}
+
+.add-memo-button {
+    background-color: #666eff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-memo-button:hover {
+    background-color: #4d4eb3;
+}
+
+/* 모달 배경 */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* 모달 컨텐츠 */
+.modal-content {
+    background-color: #fff;
+    padding: 1.5em;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 70vh;
+}
+
+.modal-memo-input input {
+    width: 100%;
+    padding: 1vh;
+    margin-top: 1vh;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Paperlogy4', sans-serif;
+    font-size: 2vh;
+}
+
+.close-button {
+    margin-top: 1em;
+    background-color: #666eff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 1vh 2vh;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.close-button:hover {
+    background-color: #4d4eb3;
+}
+
+/* 내비게이션 버튼 스타일 */
+.nav-button {
+    background-color: #ffffff;
+    border: 2px solid #cccccc;
+    border-radius: 50%;
+    color: #cccccc;
+    font-size: 2vh;
+    width: 4vh;
+    height: 4vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* 호버 효과 */
+.nav-button:hover {
+    background-color: #f0f0f0;
+    /* 호버 시 배경색 변경 */
+}
+
+/* 클릭 효과 */
+.nav-button:active {
+    background-color: #e0e0e0;
+    /* 클릭 시 배경색 변경 */
+}
+
+/* 일요일 숫자 색상 */
+.day-number.sunday {
+    color: rgb(210, 76, 76);
+}
+
+/* 토요일 숫자 색상 */
+.day-number.saturday {
+    color: rgb(49, 44, 194);
+}

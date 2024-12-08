@@ -1,0 +1,39 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 1.5vh;
+  padding: 3vh;
+  box-sizing: border-box;
+}
+
+.dashboard-title {
+  font-size: 3vh;
+  font-weight: bold;
+  padding-bottom: 1vh;
+}
+
+.top-section {
+  display: flex;
+  flex: 1;
+  gap: 1.5vh;
+}
+
+.bottom-section {
+  display: flex;
+  flex: 1;
+  gap: 1.5vh;
+}
+
+.box {
+  overflow: hidden;
+  flex: 1;
+  background-color: #ffffff;
+  padding: 3vh;
+  border-radius: 10px;
+  display: flex;
+  max-height: 32vh;
+  overflow-y: auto;
+  overflow-x: hidden; 
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,202 @@
+.practicing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%; 
+  color: white;
+  font-weight: 600;
+  position: relative; 
+}
+
+#header-container {
+  display: flex;
+  position: fixed; /* 고정 위치 */
+  top: 0.4em;
+  z-index: 100; /* 다른 요소보다 위에 표시 */
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  height: 20%;
+}
+.logo {
+  width: 8%;
+}
+.step {
+  width: 45%;
+}
+#finish-button {
+  background: #393E68;
+  border: none;
+  border-radius: 20px;
+  padding: clamp(0.2em, 1vw, 0.4em) clamp(1.2em, 2vw, 2em);
+  color: white;
+  font-size: clamp(1rem, 1.2vw, 1.5rem);
+  font-family: 'Paperlogy6', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+#finish-button:hover {
+  color:#393E68;
+  background:white;
+}
+.question-box {
+  background-color: #393E68; /* 질문 박스 배경색 */
+  border-radius: 30px 30px 0px 0px;
+  text-align: center;
+  width: 90%;
+  height: 80%;
+  padding-top: 1em;
+  font-size: clamp(1.2rem, 1.6vw, 3rem);
+  position: fixed; /* 화면 바닥에 고정 */
+  bottom: 0; /* 화면 바닥과의 간격 0 */
+  z-index: 10; /* 헤더보다 낮은 레이어로 설정 */
+}
+#q {
+  background-color: #1A182F; 
+  border-radius: 20px;
+  width: fit-content;
+  margin: 0 auto;
+  align-items: center;
+  font-size: clamp(1rem, 1.2vw, 1.6rem);
+  padding: clamp(0.5em, 1vw, 1em) clamp(1.2em, 1vw, 1.5em);
+}
+.question-box p {
+  margin-top: 3%;
+  font-size: clamp(1.2rem, 1.6vw, 3rem);
+  max-width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  word-wrap: break-word;
+}
+.video-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top : 4%;
+  margin-left: 4%;
+}
+/* 타이머와 버튼 수직 정렬 */
+.timer-container {
+  display: flex; /* 수직 정렬 */
+  margin-left: 18%;
+  flex-direction: column; /* 세로 방향 정렬 */
+}
+.video {
+  width: 40%;
+  aspect-ratio: 4 / 3; /* 비율 고정 */
+  background: #1A182F; /* 비디오가 로드되지 않았을 때 색상 */
+  position: relative; /* 동영상 안에 요소 배치를 위한 기준 */
+}
+.rec-indicator {
+  position: absolute; /* 동영상 위에 배치 */
+  top: 6%;
+  left: 2%;
+  display: flex;
+  align-items: center;
+  background-color: #3F3A3E; 
+  border-radius: 10px;
+  padding: clamp(0.1em, 1vw, 0.3em) clamp(0.4em, 1vw, 0.8em);
+  z-index: 10; /* 동영상 위에 보이도록 설정 */
+}
+.red-circle {
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+}
+.rec-button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: clamp(1rem, 1vw, 1.5rem);
+  font-weight: 600;
+}
+.timer {
+  font-size: clamp(4.5rem, 5vw, 5rem);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  transition: all 0.2s ease-in-out;
+}
+#submit-button {
+    position: relative;
+    background: white;
+    border: none;
+    border-radius: 20px;
+    padding: clamp(0.8em, 1vw, 1.5em) clamp(1.5em, 2vw, 2.5em);
+    margin-top: 4em;
+    color: black;
+    font-size: clamp(1rem, 1.2vw, 1.6rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out; 
+}
+#submit-button:hover {
+  background: #1A182F;
+  color:white;
+}
+#highlight-button {
+  background: #9c9eeb;
+  border: none;
+  border-radius: 20px;
+  padding: 0.8em 1.4em;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1.5em;
+}
+
+#highlight-button:hover {
+  background: #666eff;
+}
+/* 반응형 디자인 */
+@media (max-width: 1024px) {
+  .finish-button {
+    font-size: 1.2rem; 
+    padding: 1em 1.6em;
+  }
+  .video {
+    width: 50%;
+    aspect-ratio: 4 / 3; 
+    top: 7%;
+    left: 5%;
+  }
+  .timer {
+    font-size: clamp(3.5rem, 1vw, 4.5rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .finish-button {
+    font-size: 1.1rem; 
+    padding: 0.5em 1.6em;
+  }
+  .video-container {
+    margin-top: 3em;
+    margin-left: 2em;
+    gap: 1em;
+  }
+  .timer {
+    font-size: clamp(3rem, 1vw, 4rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .finish-button {
+   font-size: 1.1rem; 
+    padding: 0.5em 1.6em;
+  }
+  .video-container {
+    gap : 4em;
+  }
+  .rec-indicator {
+    top: 8em;
+    left: 1em;
+  }
+  .timer {
+    font-size: clamp(2.4rem, 1vw, 3rem);
+  }
+}
